@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.29)
+cmake_minimum_required(VERSION 3.30)
 
 set(KF_VERSION "6.30.0") # handled by release scripts
 project(BluezQt VERSION ${KF_VERSION})
@@ -27,6 +27,7 @@ include(ECMQtDeclareLoggingCategory)
 include(ECMGeneratePkgConfigFile)
 include(ECMQmlModule)
 include(ECMDeprecationSettings)
+include(ECMInstalledLibraryCheck)
 
 set(EXCLUDE_DEPRECATED_BEFORE_AND_AT 0 CACHE STRING "Control the range of deprecated API excluded from the build [default=0].")
 
@@ -39,7 +40,7 @@ ecm_setup_version(PROJECT
 )
 
 # Dependencies
-set(REQUIRED_QT_VERSION 6.9.0)
+set(REQUIRED_QT_VERSION 6.10.0)
 
 # Required Qt components to build this framework
 find_package(Qt6 ${REQUIRED_QT_VERSION} CONFIG REQUIRED Core DBus Network)
